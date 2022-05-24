@@ -4,7 +4,7 @@
 	"SeedName": "Purple Haze Seeds",
 	"SeedDescription": "Plant these in spring and autumn. Take 14 days to mature, then continues to produce every 7 days after first harvest.",
 	"Type": "Seed",
-	"Seasons": ["spring", "autumn"],
+	"Seasons": ["spring", "fall"],
 	"Phases": [2, 3, 3, 3, 3],
 	"RegrowthPhase": 7,
 	"HarvestWithScythe": false,

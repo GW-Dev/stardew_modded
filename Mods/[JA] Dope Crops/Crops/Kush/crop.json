@@ -4,7 +4,7 @@
 	"SeedName": "Kush Seeds",
 	"SeedDescription": "Plant these in spring, summer and autumn. Takes 21 days to grow, then continues to produce every 12 days after first harvest.",
 	"Type": "Seed",
-	"Seasons": ["spring", "summer", "autumn"],
+	"Seasons": ["spring", "summer", "fall"],
 	"Phases": [3, 4, 5, 6, 3],
 	"RegrowthPhase": 12,
 	"HarvestWithScythe": false,

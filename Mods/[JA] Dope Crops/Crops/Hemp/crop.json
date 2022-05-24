@@ -4,7 +4,7 @@
 	"SeedName": "Hemp Seeds",
 	"SeedDescription": "Plant these in spring, summer and autumn. Takes 7 days to mature.",
 	"Type": "Seed",
-	"Seasons": ["spring", "summer", "autumn"],
+	"Seasons": ["spring", "summer", "fall"],
 	"Phases": [1, 2, 1, 2, 1],
 	"RegrowthPhase": -1,
 	"HarvestWithScythe": false,

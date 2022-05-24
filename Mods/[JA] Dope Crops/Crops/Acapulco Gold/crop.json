@@ -4,7 +4,7 @@
 	"SeedName": "Acapulco Gold Seeds",
 	"SeedDescription": "Plant these in autumn. Takes 10 days to mature, then continues to produce every 7 days after first harvest.",
 	"Type": "Seed",
-	"Seasons": ["autumn"],
+	"Seasons": ["fall"],
 	"Phases": [3, 2, 2, 2, 1],
 	"RegrowthPhase": 7,
 	"HarvestWithScythe": false,
