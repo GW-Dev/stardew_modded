@@ -1,0 +1,31 @@
+{
+	"Name": "Magic Mushroom",
+	"Description": "Tastes earthy with a chewy texture. Makes you very relaxed when consumed.",
+	"Edibility": 15,
+	"EdibleIsDrink": false,
+	"EdibleBuffs":
+	{
+		"Farming": 0,
+		"Fishing": 0,
+		"Mining": 0,
+		"Luck": 2,
+		"Foraging": 2,
+		"MaxStamina": 0,
+		"MagneticRadius": 0,
+		"Speed": -1,
+		"Defense": 2,
+		"Attack": 0,
+		"Duration": 300,
+	},
+	"CanSell": true,
+	"Price": 750,
+	"IsColoured": false,
+	"GiftTastes":
+	{
+		"Love": ["Leah", "Linus", "Robin", "Wizard"],
+		"Like": ["Elliot", "Sebastian", "Emily", "Demetrius", "George", "Kent", "Pam"],
+		"Neutral": ["Abigail", "Clint", "Evelyn", "Gus", "Marnie"],
+		"Dislike": ["Shane", "Sam", "Caroline", "Jodi", "Lewis", "Pierre", "Sandy", "Willy"],
+		"Hate": ["Alex", "Harvey", "Haley", "Maru", "Penny", "Dwarf", "Jas", "Krobus", "Vincent", "Leo"]
+	}
+}

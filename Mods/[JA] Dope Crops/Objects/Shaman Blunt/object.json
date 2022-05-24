@@ -1,0 +1,45 @@
+{
+	"Name": "Shaman Blunt",
+	"Description": "Tastes of mint, spice, and citrus. Quite refreshing. Makes you very energized when consumed.",
+	"Category": "Crafting",
+	"CanSell": true,
+	"Price": 832,
+	"Edibility": 80,
+	"EdibleIsDrink": false,
+	"EdibleBuffs":
+	{
+		"Farming": 0,
+		"Foraging": 0,
+		"Mining": 0,
+		"Fishing": 0,
+		"Luck": 0,
+		"MaxStamina": 3,
+		"MagneticRadius": 0,
+		"Speed": 2,
+		"Defense": 0,
+		"Attack": 1,
+		"Duration": 240,
+	},
+	"Recipe":
+	{
+		"ResultCount": 1,
+		"Ingredients": [
+		{
+			"Object": "Paper",
+			"Count": 1,
+		},
+		{
+			"Object": "Shaman",
+			"Count": 1,
+		}],
+		"IsDefault": true,
+	},
+	"GiftTastes":
+	{
+		"Love": ["Gus", "Lewis"],
+		"Like": ["Shane", "Leah", "Caroline", "Evelyn", "Kent", "Linus", "Pam", "Robin"],
+		"Neutral": ["Sam", "Abigail", "Clint", "Demetrius", "George", "Marnie"],
+		"Dislike": ["Elliot", "Sebastian", "Emily", "Jodi", "Pierre", "Sandy", "Willy", "Wizard"],
+		"Hate": ["Alex", "Harvey", "Haley", "Maru", "Penny", "Dwarf", "Jas", "Krobus", "Vincent", "Leo"],
+	}
+}

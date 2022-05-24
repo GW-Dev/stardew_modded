@@ -1,0 +1,9 @@
+{
+	"Name": "Blue Dream",
+	"Description": "Has a sweet berry aroma.",
+	"Edibililty": -300,
+	"EdibleIsDrink": false,
+	"CanSell": true,
+	"Price": 315,
+	"IsColoured": false
+}

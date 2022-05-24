@@ -1,0 +1,9 @@
+{
+	"Name": "Kush",
+	"Description": "Has a pine aroma.",
+	"Edibility": -300,
+	"EdibleIsDrink": false,
+	"CanSell": true,
+	"Price": 450,
+	"IsColoured": false
+}

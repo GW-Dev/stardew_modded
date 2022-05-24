@@ -1,0 +1,9 @@
+{
+	"Name": "Lemon Haze",
+	"Description": "Has a fresh lemon aroma.",
+	"Edibility": -300,
+	"EdibleIsDrink": false,
+	"CanSell": true,
+	"Price": 375,
+	"IsColoured": false
+}

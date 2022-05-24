@@ -1,0 +1,9 @@
+{
+	"Name": "Acapulco Gold",
+	"Description": "Has a spicy aroma.",
+	"Edibility": -300,
+	"EdibleIsDrink": false,
+	"CanSell": true,
+	"Price": 320,
+	"IsColoured": false
+}

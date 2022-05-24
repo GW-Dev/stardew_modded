@@ -1,0 +1,9 @@
+{
+	"Name": "Purple Haze",
+	"Description": "Has a fresh and tropical aroma.",
+	"Edibility": -300,
+	"EdibleIsDrink": false,
+	"CanSell": true,
+	"Price": 345,
+	"IsColoured": false
+}

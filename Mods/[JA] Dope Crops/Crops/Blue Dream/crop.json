@@ -1,0 +1,24 @@
+{
+	"Name": "Blue Dream",
+	"Product": "Blue Dream",
+	"SeedName": "Blue Dream Seeds",
+	"SeedDescription": "Plant these in summer. Takes 10 days to mature, then continues to produce every 4 days after first harvest.",
+	"Type": "Seed",
+	"Seasons": ["summer"],
+	"Phases": [2, 2, 2, 2, 2],
+	"RegrowthPhase": 4,
+	"HarvestWithScythe": false,
+	"TrellisCrop": false,
+	"Colors": null,
+	"Bonus":
+	{
+		"MinimumPerHarvest": 2,
+		"MaximumPerHarvest": 2,
+		"MaxIncreasePerFarmLevel": 1,
+		"ExtraChance": 0.0
+	},
+	"CanPurchase": true,
+	"SeedPurchaseRequirements": null,
+	"SeedPurchaseFrom": "Pierre",
+	"SeedPurchasePrice": 210
+}

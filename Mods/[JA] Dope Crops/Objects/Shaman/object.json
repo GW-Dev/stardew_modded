@@ -1,0 +1,9 @@
+{
+	"Name": "Shaman",
+	"Description": "Has a minty and citrus aroma.",
+	"Edibility": -300,
+	"EdibleIsDrink": false,
+	"CanSell": true,
+	"Price": 624,
+	"IsColoured": false
+}

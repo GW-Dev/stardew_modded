@@ -1,0 +1,9 @@
+{
+	"Name": "Hemp",
+	"Description": "Can be used to craft paper.",
+	"Edibility": -300,
+	"EdibleIsDrink": false,
+	"CanSell": true,
+	"Price": 60,
+	"IsColoured": false
+}

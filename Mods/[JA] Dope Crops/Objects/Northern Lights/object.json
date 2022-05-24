@@ -1,0 +1,9 @@
+{
+	"Name": "Northern Lights",
+	"Description": "Has a pine and earthy aroma.",
+	"Edibility": -300,
+	"EdibleIsDrink": false,
+	"CanSell": true,
+	"Price": 300,
+	"IsColoured": false
+}

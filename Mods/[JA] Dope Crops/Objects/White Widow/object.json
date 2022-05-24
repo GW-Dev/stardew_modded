@@ -1,0 +1,9 @@
+{
+	"Name": "White Widow",
+	"Description": "Has a floral and fruity aroma.",
+	"Edibility": -300,
+	"EdibleIsDrink": false,
+	"CanSell": true,
+	"Price": 240,
+	"IsColoured": false
+}

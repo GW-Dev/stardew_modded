@@ -1,0 +1,20 @@
+{
+	"Name": "Paper",
+	"Description": "Thin paper made from hemp. Makes great cigarette paper.",
+	"Category": "Crafting",
+	"Edibility": -300,
+	"EdibleIsDrink": false,
+	"CanSell": true,
+	"Price": 100,
+	"IsColored": false,
+	"Recipe":
+	{
+		"ResultCount": 1,
+		"Ingredients":	[
+		{
+			"Object": "Hemp",
+			"Count": 1,
+		}],
+		"IsDefault": true,
+	}
+}

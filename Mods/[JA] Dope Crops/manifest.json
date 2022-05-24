@@ -1,0 +1,12 @@
+{
+	"Name": "Dope Crops",
+	"Author": "Tenti-Q",
+	"Version": "1.0.0",
+	"MinimumApiVersion": "3.0.0",
+	"Description": "Adds new drug related crops and objects.",
+	"UniqueID": "Tenti-Q.DopeCrops",
+	"ContentPackFor":
+	{
+		"UniqueID": "spacechase0.JsonAssets"
+	}
+}

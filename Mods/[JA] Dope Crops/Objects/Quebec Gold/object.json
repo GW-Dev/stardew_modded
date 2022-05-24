@@ -1,0 +1,9 @@
+{
+	"Name": "Quebec Gold",
+	"Description": "Has a sweet citrus aroma.",
+	"Edibility": -300,
+	"EdibleIsDrink": false,
+	"CanSell": true,
+	"Price": 264,
+	"IsColoured": false
+}
