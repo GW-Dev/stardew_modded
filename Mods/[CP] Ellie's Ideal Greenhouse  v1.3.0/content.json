@@ -1,0 +1,16 @@
+{
+	"Format": "1.19.0",
+	"ConfigSchema": {
+        "GreenhouseType": {"AllowValues": "Modest, Expanded, Spacious",
+        "Default": "Modest"}
+
+    },
+	
+	"Changes": [
+    		{
+			"Action": "Load",
+			"Target": "Maps/Greenhouse",
+			"FromFile": "assets/{{GreenhouseType}} Greenhouse.tmx"
+		},
+	]
+}
