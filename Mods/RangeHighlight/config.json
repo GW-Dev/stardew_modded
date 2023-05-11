@@ -1,9 +1,12 @@
 {
+  "RefreshInterval": 6,
   "ShowJunimoRange": true,
   "ShowSprinklerRange": true,
   "ShowScarecrowRange": true,
   "ShowBeehouseRange": true,
   "ShowBombRange": true,
+  "HighlightBuildingsOnMouseover": true,
+  "HighlightActionLocation": "Always",
   "ShowOtherSprinklersWhenHoldingSprinkler": true,
   "ShowOtherScarecrowsWhenHoldingScarecrow": true,
   "ShowOtherBeehousesWhenHoldingBeehouse": false,

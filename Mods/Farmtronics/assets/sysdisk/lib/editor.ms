@@ -21,8 +21,33 @@ pal.cursor = "#CCCCFF"
 pal.topBar = "#AAAAAA"
 pal.topBarText = "#8888CC"
 
+cutLines = []
+linesCutFromLineNum = null
+
+indentation = function(line)
+	for i in line.indexes
+		if line[i] != " " then return floor(i/2)
+	end for
+	return floor(line.len/2)
+end function
+
+trimLeft = function(s)
+	if not s then return s
+	len = s.len
+	p0 = 0
+	while p0 < len and (s[p0] == " " or s[p0] == TAB)
+		p0 = p0 + 1
+	end while
+	return s[p0:]
+end function
+
 lineLen = function(lineNum)
 	if lineNum < data.len then return data[lineNum].len
+	return 0
+end function
+
+minX = function(lineNum)
+	if lineNum < data.len then return indentation(data[lineNum]) * 2
 	return 0
 end function
 
@@ -33,7 +58,7 @@ drawTopBar = function()
 	print " " + _sourceFile
 	lstr = str(cursorY + 1)
 	print " " * (screenW - 13 - lstr.len - text.column)
-	print "^Q: Quit   L" + lstr
+	print "^H: Help   L" + lstr
 	print " " * (screenW - text.column)
 end function
 
@@ -108,8 +133,8 @@ limitCursor = function()
 	else if cursorY > data.len then
 		outer.cursorY = data.len
 	end if
-	if cursorX < 0 then
-		outer.cursorX = 0
+	if cursorX < minX(cursorY) then
+		outer.cursorX = minX(cursorY)
 	else if cursorX > lineLen(cursorY) then
 		outer.cursorX = lineLen(cursorY)
 	end if
@@ -172,6 +197,66 @@ nextWord = function(dir)
 	outer.cursorX = x
 end function
 
+cutLine = function
+	if cursorY != linesCutFromLineNum then
+		outer.cutLines = []
+		outer.linesCutFromLineNum = cursorY
+	end if
+	if cursorY >= data.len then return "End of File"
+	cutLines.push data[cursorY]
+	data.remove cursorY
+	refreshDisplay
+	if cutLines.len == 1 then return "Cut (1 Line)"
+	return "Cut (" + cutLines.len + " Lines)"
+end function
+
+pasteLines = function
+	for line in cutLines
+		data.insert cursorY, line
+		outer.cursorY = cursorY + 1
+	end for
+	scrollCursorIntoView
+	refreshDisplay
+	if cutLines.len == 1 then return "Paste (1 Line)"
+	return "Paste (" + cutLines.len + " Lines)"
+end function
+
+showHelp =  function
+	text.color = pal.text; text.backColor = "#4F1CDBFF"
+	text.clear; text.delimiter = char(13)
+	text.row = 19; text.column = 0
+	text.inverse = true
+	print " "*8 + "Farmtronics Text Editor" + " "*9
+	text.inverse = false
+	print "Hold the Control key and press a letter"
+	print "to perform one of the functions below."
+	print "Example: "
+	print "   ^Q means hold Contol and press Q."
+	print
+	funcs = [
+		"^A: Go to start of line",
+		"^E: Go to end of line",
+		"^U: Page up",
+		"^D: Page down",
+		"^K: Cut line(s)",
+		"^V: Paste line(s)",
+		"^H: View this help",
+		"^Q: Quit"]
+	text.delimiter = ""
+	for func in funcs
+		parts = func.split(":")
+		text.column = 3; text.inverse = true
+		print parts[0] + " "
+		text.inverse = false
+		print parts[1] + char(13)
+	end for
+	text.row = 0
+	print "(Press any key to continue.)"
+	key.get
+	text.backColor = color.clear
+	refreshDisplay
+end function
+
 showCommand = function(keyPress, desc)
 	refreshRow 0
 	s = keyPress
@@ -197,18 +282,27 @@ handleControlKey = function(k)
 	if kcode > 31 then keyPress = "^" + char(kcode)
 	if anyShift then keyPress = "Shift-" + keyPress
 
+	// Want to customize your key bindings?  Change
+	// the code below, and the help in showHelp above.
 	if keyPress == "^A" then  // ctrl-A (start of line)
 		desc = "LineStart"
 		outer.cursorX = 0
 	else if keyPress == "^E" then // ctrl-E (end of line)
 		desc = "LineEnd"
 		outer.cursorX = lineLen(cursorY)
+	else if keyPress == "^H" then  // help
+		showHelp
+		desc = "Help"
 	else if keyPress == "^U" then	// Page Up
 		desc = "PageUp"
 		outer.cursorY = outer.cursorY - screenLines
 	else if keyPress == "^D" then	// Page Down
 		desc = "PageDown"
-		outer.cursorY = outer.cursorY + screenLines		
+		outer.cursorY = outer.cursorY + screenLines
+	else if keyPress == "^K" then  // Cut line
+		desc = cutLine
+	else if keyPress == "^V" then  // Paste lines
+		desc = pasteLines
 	else if keyPress == "^Q" then  // Escape or Ctrl+X
 		desc = "Quit"
 		outer.quitting = true
@@ -238,7 +332,7 @@ handleKey = function(k, fakeControl=false)
 	else if kcode == 17 then  // left
 		keyPress = ""
 		outer.cursorX = cursorX - 1
-		if cursorX < 0 and cursorY > 0 then
+		if cursorX < minX(cursorY) and cursorY > 0 then
 			outer.cursorY = cursorY - 1
 			outer.cursorX = lineLen(cursorY)
 		end if
@@ -249,7 +343,7 @@ handleKey = function(k, fakeControl=false)
 		outer.cursorX = cursorX + 1
 		if cursorX > lineLen(cursorY) and cursorY < data.len then
 			outer.cursorY = cursorY + 1
-			outer.cursorX = 0
+			outer.cursorX = minX(cursorY)
 		end if
 		if byWord then nextWord 1
 		outer.idealCursorX = cursorX
@@ -273,6 +367,7 @@ handleKey = function(k, fakeControl=false)
 		data[cursorY] = data[cursorY][:cursorX]
 		outer.cursorY = cursorY + 1
 		outer.cursorX = 0
+		reindent cursorY-1, -1, false
 		refreshDisplay
 	else if kcode == 127 then  // forward-delete
 		keyPress = ""
@@ -280,6 +375,7 @@ handleKey = function(k, fakeControl=false)
 			if cursorY < data.len-1 then
 				data[cursorY] = data[cursorY] + data[cursorY+1]
 				data.remove cursorY + 1
+				reindent cursorY, -1, false
 				refreshDisplay
 			end if
 		else
@@ -289,23 +385,26 @@ handleKey = function(k, fakeControl=false)
 			data[cursorY] = data[cursorY][:startPos] + data[cursorY][cursorX:]
 			outer.cursorX = startPos
 			refreshLine cursorY
+			reindent cursorY
 		end if
 	else if kcode == 8 then  // backspace
 		keyPress = ""
-		if cursorX > 0 then
+		if cursorX > minX(cursorY) then
 			endPos = cursorX
 			outer.cursorX = cursorX - 1
 			if byWord then nextWord -1
 			data[cursorY] = data[cursorY][:cursorX] + data[cursorY][endPos:]
 			refreshLine cursorY
+			reindent cursorY
 		else if cursorY > 0 then
 			x = data[cursorY-1].len
 			if cursorY < data.len then
-				data[cursorY-1] = data[cursorY-1] + data[cursorY]
+				data[cursorY-1] = data[cursorY-1] + trimLeft(data[cursorY])
 				data.remove cursorY
 			end if
 			outer.cursorY = cursorY - 1
 			outer.cursorX = x
+			reindent cursorY, -1, false
 			refreshDisplay
 		end if
 	else if kcode == 27 then  // Escape
@@ -320,12 +419,125 @@ handleKey = function(k, fakeControl=false)
 		end if
 		outer.cursorX = cursorX + 1
 		refreshLine cursorY
+		reindent cursorY
 	end if
 
 	limitCursor
 	scrollCursorIntoView
 	drawTopBar
 	showCursor	
+end function
+
+isAlpha = function(c)
+	return (c >= "a" and c <= "z") or (c >= "A" and c <= "Z") or c.code > 127
+end function
+
+isNumeric = function(c)
+	return c >= "0" and c <= "9"
+end function
+
+// tokenize: split the given source line into rough tokens.  Note that
+// this is mainly about detecting keywords, string literals, and comments;
+// other stuff may get lumped or split (and that's OK for our purposes).
+tokenize = function(line)
+	result = []
+	p0 = 0
+	p1 = 1
+	while p0 < line.len
+		c = line[p0]
+		if c == " " or c == TAB then
+			p0 = p0 + 1
+		else if c == """" then  // string literal
+			p1 = line.indexOf("""", p0+1) + 1
+			if p1 == null then p1 == line.len
+			result.push line[p0:p1]
+			p0 = p1
+		else if c == "/" and p0+1 < line.len and line[p0+1] == "/" then // comment
+			result.push line[p0:]
+			break
+		else if isAlpha(c) then  // identifier or keyword
+			p1 = p0 + 1
+			while p1 < line.len
+				c = line[p1]
+				if not isAlpha(c) and not isNumeric(c) then break
+				p1 = p1 + 1
+			end while
+			result.push line[p0:p1]
+			p0 = p1
+		else if isNumeric(c) then  // number
+			p1 = p0 + 1
+			while p1 < line.len
+				c = line[p1]
+				if not isNumeric(c) then break
+				p1 = p1 + 1
+			end while
+			result.push line[p0:p1]
+			p0 = p1
+		else
+			result.push c
+			p0 = p0 + 1
+		end if
+	end while
+	return result
+end function
+
+// indentEffect: figure out how the given source line affects indentation.
+// returns a list containing: [outdentThis, indentNext], where
+// outdentThis is how much this line should be outdented, and
+// indentNext is how much the next line should be indented.
+indentEffect = function(line)
+	tokens = tokenize(line)
+	if tokens and tokens[-1].len > 1 and tokens[-1][-2:] == "//" then tokens.pop
+	if not tokens then return [0,0]
+	if tokens[0] == "if" then
+		// Tricky case, because of single-line `if`.
+		// We can recognize that by having more tokens after `then`.
+		thenPos = tokens.indexOf("then")
+		if thenPos and thenPos < tokens.len-1 then return [0,0]
+		return [0,1]
+	else if tokens[0] == "else" then
+		return [1,1]
+	else if tokens[0] == "while" or tokens[0] == "for" then
+		return [0,1]
+	else if tokens[0] == "end" then
+		return [1,0]
+	else if tokens.indexOf("function") != null then
+		return [0,1]
+	end if
+	return [0,0]
+end function
+
+// reindent: reindent the given range of source lines.
+reindent = function(fromLine, toLine=-1, refresh=true, bailEarly=true)
+	if toLine < 0 then toLine = data.len - 1
+	bailCounter = 0
+	indent = 0
+	if fromLine > 0 then
+		prevLine = data[fromLine - 1]
+		indent = indentation(prevLine) + indentEffect(prevLine)[1]
+	end if
+	for lineNum in range(fromLine, toLine)
+		line = data[lineNum]
+		curIndent = indentation(line)
+		effect = indentEffect(line)
+		outdentThis = effect[0]; indentNext = effect[1]
+		indent = indent - outdentThis
+		if indent < 0 then indent = 0
+		if curIndent != indent then
+			// reindent this line!
+			data[lineNum] = "  "*indent + trimLeft(line)
+			if outer.cursorY == lineNum then
+				outer.cursorX = outer.cursorX + (indent - curIndent)*2
+			end if
+			if refresh then refreshLine lineNum
+			bailCounter = 0
+		else if bailEarly then
+			// bail out after several correct lines in a row
+			bailCounter = bailCounter + 1
+			if bailCounter > 4 then break
+		end if
+		indent = indent + indentNext
+	end for
 end function
 
 update = function()

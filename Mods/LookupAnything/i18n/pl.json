@@ -445,6 +445,30 @@
 
 
     /*********
+    ** Item > melee weapon lookups
+    *********/
+    // labels
+    // TODO
+    "item.melee-weapon.accuracy": "Accuracy",
+    "item.melee-weapon.critical-chance": "Critical chance",
+    "item.melee-weapon.critical-damage": "Critical damage",
+    "item.melee-weapon.damage": "Damage",
+    "item.melee-weapon.defense": "Defense",
+    "item.melee-weapon.knockback": "Knockback",
+    "item.melee-weapon.reach": "Reach",
+    "item.melee-weapon.speed": "Attack speed",
+
+    // values
+    // TODO
+    "item.melee-weapon.critical-damage.label": "{{multiplier}} times normal damage (before player bonuses)",
+    "item.melee-weapon.defense.label": "{{amount}} while equipped",
+    "item.melee-weapon.knockback.label": "{{amount}} ({{multiplier}} times normal distance)",
+    "item.melee-weapon.reach.label": "{{amount}} pixels",
+    "item.melee-weapon.speed.shown-vs-actual": "shown: {{shownSpeed}}{{lineBreak}}actual: {{actualSpeed}}",
+    "item.melee-weapon.speed.summary": "{{speed}} ({{milliseconds}} milliseconds per swing frame, before player speed bonuses)",
+
+
+    /*********
     ** Item > movie lookups
     *********/
     // labels
@@ -512,7 +536,7 @@
     "npc.friendship.need-bouquet": "potrzeba bukietu na następne",
     "npc.friendship.need-points": "następne za {{count}} pkt",
     "npc.undiscovered-gift-taste": "{{count}} nieodkrytych przedmiotów",
-    "npc.undiscovered-gift-taste-appended": ", oraz {{count}} nieodkrytych przedmiotów",
+    "npc.unowned-gift-taste": "{{count}} unowned items", // TODO
 
 
     /*********
@@ -690,6 +714,8 @@
     "config.highlight-unrevealed-gift-tastes.desc": "Czy wyróżniać przedmioty w upodobaniach prezentowych, które nie zostały odkryte w profilu NPC. Gdy ta opcja jest włączona, nieodkryte upodobania prezentowe będą pogrubione, a w podglądach pojawią się również nielubiane/znienawidzone prezenty.",
     "config.show-all-gift-tastes.name": "Pokaż wszystkie upodobania",
     "config.show-all-gift-tastes.desc": "Czy pokazywać wszystkie upodobania prezentowe dla podglądów NPC i przedmiotów. Gdy ta opcja jest wyłączona, pokazywane są tylko najistotniejsze upodobania (np. ukochane lub lubiane prezenty).",
+    "config.show-unowned-gifts.name": "Show unowned gift tastes", // TODO
+    "config.show-unowned-gifts.desc": "Whether to show gift tastes for items that the player doesn't own somewhere in the world.", // TODO
 
     // advanced options
     "config.title.advanced-options": "Opcje zaawansowane",

@@ -1,5 +1,34 @@
 {
   "PregnancyData": [],
   "AnimalData": [],
-  "AnimalContestData": []
+  "AnimalContestData": [
+    {
+      "EventId": 657201026,
+      "_date": "26 spring Y1",
+      "Contenders": [
+        "Marnie",
+        "Maru",
+        "Jodi"
+      ],
+      "VincentAnimal": "Frog",
+      "MarnieAnimal": "White_Cow",
+      "PlayerAnimal": null,
+      "Winner": "Marnie",
+      "ParticipantId": null,
+      "FarmAnimalScore": null
+    },
+    {
+      "EventId": 657201226,
+      "_date": "26 fall Y1",
+      "Contenders": [
+        "Marnie"
+      ],
+      "VincentAnimal": null,
+      "MarnieAnimal": null,
+      "PlayerAnimal": null,
+      "Winner": "Marnie",
+      "ParticipantId": null,
+      "FarmAnimalScore": null
+    }
+  ]
 }
