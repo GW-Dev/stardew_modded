@@ -493,7 +493,7 @@
                 "BeforeMovie": {
                   "ResponsePoint": null,
                   "Script": "",
-                  "Text": "Is this a scary film?$0"
+                  "Text": "{{i18n:Scarlett.Movies.23}}", 
                 },
                 "DuringMovie": {
                   "ResponsePoint": null,

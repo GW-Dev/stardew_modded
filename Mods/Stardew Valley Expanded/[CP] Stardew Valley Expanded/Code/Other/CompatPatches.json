@@ -144,7 +144,7 @@
                     "Day |contains=22": true
                },
                "Entries": {
-                    "JojaMart_12_28": "Welcome to JojaMart, where our prices match our service. Budget all the way!$0",
+                    "JojaMart_12_28": "{{i18n:JojaDay.Juliet.1}}",
                },
           },
           //Extended Minecart compatibility patch

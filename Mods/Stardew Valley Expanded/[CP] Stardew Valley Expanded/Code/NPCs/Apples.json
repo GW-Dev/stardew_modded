@@ -78,12 +78,6 @@
       },
       "FromFile": "assets/CharacterFiles/Schedules/Apples/ScheduleJunimoWoods.json"
     },
-     {
-      //Apples' Roommate Dialogue
-      "Action": "Load",
-      "Target": "Characters/Dialogue/MarriageDialogueApples",
-      "FromFile": "assets/CharacterFiles/Dialogue/Apples/RoommateDialogue.json"
-    },
     {
       "Action": "EditData",
       "Target": "Strings/StringsFromCSFiles",

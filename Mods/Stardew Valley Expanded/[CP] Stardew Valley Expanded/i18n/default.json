@@ -1,4 +1,7 @@
 {
+
+  //Juliet and Jessie Compat
+  "JojaDay.Juliet.1": "Welcome to JojaMart, where our prices match our service. Budget all the way!$0",
   //Weapons.Json
   "GalaxySlingshot": "Iridium ore fired from this slingshot are given cosmic energy",
 
@@ -2266,11 +2269,14 @@
   "Claire.14hearts3.CC.03": "Reviews are good!",
   "Claire.14hearts3.CC.04": "You made it! Oh, I'm so glad you're here.$7",
   "Claire.14hearts3.CC.05": "I'll trade you!",
+  "Claire.14hearts3.CC.05A": "Sorry ma'am. One moment please!$0",
   "Claire.14hearts3.CC.06": "Of course, dear.$6",
   "Claire.14hearts3.CC.07": "It'll be splendid!",
   "Claire.14hearts3.CC.08": "No way! It's mine!",
+  "Claire.14hearts3.CC.08A": "Hey there, Claire!$1",
   "Claire.14hearts3.CC.09": "We'll see.",
   "Claire.14hearts3.CC.10": "I'm so sorry you can’t make it to the premiere, Martin.$2",
+  "Claire.14hearts.3.CC.10A": "That's okay! I snuck in a peek when we were setting up the projectors.$0#$b#Claire, you did an amazing job! I think everyone's going to love it.$6",
   "Claire.14hearts3.CC.11": "Haha!",
   "Claire.14hearts3.CC.12": "Can we go in yet?",
   "Claire.14hearts3.CC.13": "It's going to start soon...$1#$b#@, I'm so nervous... you'll hold my hand, right?$2",
@@ -4146,6 +4152,7 @@
   "Scarlett.Movies.20": "I love hearing the sound of fresh popcorn being made.$0",
   "Scarlett.Movies.21": "*yawn*",
   "Scarlett.Movies.22": "That was kinda boring...$2",
+  "Scarlett.Movies.23": "Is this a scary film?$0",
   //Scarlett Events
   "Scarlett.Farmhand.01": "Hey there! I wanted to drop by and tell you I just started working as a farmhand for some local farmers in the valley.$0#$b#You'll be catching me around here more often!$1",
   "Scarlett.Farmhand.02": "Also, you should totally visit me in Grampleton! There's a kiosk at the railroad station.$0#$b#My address is '106 Pondwood Road'. Swing by sometime!$1",
@@ -4458,6 +4465,7 @@
   //Morris Townhouse Strings
   "Morris.Townhouse.1": "Townhouse Project",
   "Morris.Townhouse.2": "Morris is building a modern home in the valley, but he's unable to source iron bars. He promises a large monetary reward if I help him out!",
+  "Morris.Townhouse.3": "Deliver 60 'iron bars' to Morris.",
   //Events
   "Morris.Townhouse1.01": "Good morning, @.$1#$b#I wanted to discuss something with you...$4#$b#Swing by my office at Joja Mart at your leisure.$0",
   "Morris.Townhouse2.01": "Please, come in!$0",
@@ -4547,6 +4555,7 @@
   "Morris.4hearts.BeNiceToEmployees.03": "I agree!",
   "Morris.4hearts.BeNiceToEmployees.04": "I'm so tired...$8",
   "Morris.4hearts.BeNiceToEmployees.05": "...$3#$b#...$2#$b#Perhaps I will look into asking my superiors about pay raises. Would that suffice?$3",
+  "Morris.4hearts.BeNiceToEmployees.05A": "That's a start.",
   "Morris.4hearts.BeNiceToEmployees.06": "Totally awesome!",
   "Morris.4hearts.BeNiceToEmployees.07": "Thank you, sir!$11",
   "Morris.4hearts.BeNiceToEmployees.08": "I'll... be on the phone.$0#$b#You four better make the store spotless. I expect results.$3",
@@ -5341,6 +5350,7 @@
   "Morgan.4hearts.LetMorganWin.11": "Oh. I'm not a girl.$9",
   "Morgan.4hearts.LetMorganWin.12": "Huh?$2",
   "Morgan.4hearts.LetMorganWin.13": "I don't understand...$2",
+  "Morgan.4hearts.Um": "Um...$9",
   "Morgan.4hearts.LetMorganWin.14": "I identify myself differently. I'm not a boy or a girl - I'm just me.$0",
   "Morgan.4hearts.CatchMorgan.01": "You found me!",
   "Morgan.4hearts.CatchMorgan.02": "Maybe I should've taken the hat off...$2",
@@ -6560,7 +6570,9 @@
   "Sam.10hearts.08": "No Mom! I was just... doing push-ups! I wanna beat Dad at arm-wrestling some day! ...heh.$8",
   "Sam.10hearts.09": "Oh! *giggle*... That explains why you're all red and sweaty.$h#$b#Okay, well good luck. I'll see you in the morning.",
   "Sam.10hearts.10": "Goodnight, Mom.$u",
+  "Sam.10hearts.10A": "Whew... That was close.",
   "Sam.10hearts.11": "...@?",
+  "Sam.10hearts.11A": "#Get out of the bed.#Stay put.",
   "Sam.10hearts.12": "Earlier, I was trying to say... that I really like you, @. I think we could really have something special together... Know what I mean?",
   "Sam.10hearts.13": "Alright, I said it.$7",
   "Sam.10hearts.14": "#Move closer to Sam.#Head for the window.",
@@ -6845,6 +6857,7 @@
   "Sebastian.8heart.03": "Okay, here we go... Let me draw the scenario card.$7",
   "Sebastian.8heart.04": "Hmm... It looks like today's quest will take us into the Necromancer's Tower... to try and reclaim the Solarion Staff from the clutches of Dreadlord Xarth.",
   "Sebastian.8heart.05": "Cool... @, are you ready to choose your character?",
+  "Sebastian.8heart.05A": "Choose your character:#Warrior. I like a direct approach.#Healer. I prefer to help others.#Wizard. A sharp mind is the most powerful blade of all.",
   "Sebastian.8heart.06": "Hey! That's what I was going to pick!$h#$b#I guess I'll be the healer then.",
   "Sebastian.8heart.07": "Cool. Warrior's my favorite anyway.",
   //************************
@@ -7463,6 +7476,7 @@
   //************************
   //Pam Events Dialogue
   "Pam.Event.01": "*sigh*...",
+  "Pam.Event.01A": "GAH! DON'T SCARE ME LIKE THAT!$3",
   "Pam.Event.02": "I've been on edge lately.$2",
   "Pam.Event.03": "To tell you the truth, I'm sick of everything.$2",
   "Pam.Event.04": "#What's bothering you?#Well, I hope you feel better. Bye.",
@@ -9385,6 +9399,8 @@
   "JojaDay.Dialogue.112": "I don't like Joja Day...$2",
   "JojaDay.Dialogue.113": "I don't like Joja Day...$2#$e#It just... reminds me of too much.$2",
   "JojaDay.Dialogue.114": "I've felt weird all day.$2",
+  "JojaDay.Dialogue.115": "I can't decide what I want to get!$1",
+  "JojaDay.Dialogue.116": "Greetings, @.$0",
   //Community Day
   "CommunityDay.Intro.01": "Hello, @. I wanted to stop by and tell you 'Community Day' will be tomorrow.$0#$b#The whole town is showing up at the community center at around 1pm. It'd be a delight if you attended!$0",
   "CommunityDay.Intro.02": "Starting now, there will be gatherings at the community center on the 22nd of every season!",

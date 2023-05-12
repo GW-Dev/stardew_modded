@@ -14,7 +14,7 @@
       "Action": "EditData",
       "Target": "Data/NPCGiftTastes",
       "Entries": {
-        "Victor": "{{i18n:gifts.victor.love}}/224 787 444 551/{{i18n:gifts.victor.like}}/254 346 348 349 392 394/{{i18n:gifts.victor.dislike}}/18 16 20 22 24 408 80 416 414 412 296 398 410 152 396 397 399/{{i18n:gifts.victor.hated}}/205 404 420 422 609 610 196 213 218 219 225 403/{{i18n:gifts.victor.neutral}}/184 186 180 182 174 176 424 426/"
+        "Victor": "{{i18n:gifts.victor.love}}/224 787 444 551/{{i18n:gifts.victor.like}}/254 346 348 349 392 394/{{i18n:gifts.victor.dislike}}/18 16 20 22 24 408 80 416 414 412 296 398 410 152 396 397 399/{{i18n:gifts.victor.hate}}/205 404 420 422 609 610 196 213 218 219 225 403/{{i18n:gifts.victor.neutral}}/184 186 180 182 174 176 424 426/"
       },
     },
     {

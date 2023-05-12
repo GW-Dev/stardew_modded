@@ -706,8 +706,8 @@
 			"Action": "EditData",
 			"Target": "strings/schedules/Victor",
 			"Entries": {
-				"JojaDay_Victor": "I can't decide what I want to get!$1",
-				"JojaDay1_Victor": "Greetings, @.$0"
+				"JojaDay_Victor": "{{i18n:JojaDay.Dialogue.115}}",
+				"JojaDay1_Victor": "{{i18n:JojaDay.Dialogue.116}}", 
 			}
 		},
 		{ //Victor Joja Day Marriage Dialogue
